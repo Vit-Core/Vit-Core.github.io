@@ -1,0 +1,67 @@
+# 让浏览器做服务器
+  一般，浏览器作为客户端，消耗服务端提供的服务。但天天吃白食难免想体验一下被需要的感觉.浏览器能运算、能通信，那么它就可以把自己的运算能力向外提供，过一把服务端的瘾。
+
+接下来我们一步一步帮浏览器实现自己的梦想。
+
+
+## 1.docker
+### 1.1 部署服务中心
+>docker部署服务中心很简单，一条命令即搞定
+
+```shell
+docker run --name=sers_servicecenter --net=host -d sersms/sers_dotnet_servicecenter:2.1.1.250
+```
+
+如此这般，服务中心就部署好了，他会开启4580端口作为网关入口，开启4503端口作为websocket服务通信端口。
+可以用浏览器打开地址 <http://ip:4580/_gover_/index.html?user=admin_123456> 进入服务治理控制台，我们暂时用不到这里。
+
+### 1.2 JsStation登场
+>服务中心部署好了，接下来该让浏览器亮相了。
+
+打开地址 <http://ip:4580/JsStation/JsStation.html> 进入JsStation服务站点页面。
+分别点击“加载api”按钮和“启动服务”按钮，若按钮上方文本框有如下字样则代表已经作为服务站点提供服务了。
+
+```javascript
+[17:16.482][info]加载api...
+[17:16.485][info]api已加载，数量：1
+[17:17.821][info][sers.CL]try connect...
+[17:17.957][info][ServiceStation] regist serviceStation to ServiceCenter...
+[17:17.980][info][ServiceStation] regist - succeed
+```
+ 我们来验证一下浏览器是否真的提供了服务，浏览器新建窗口，打开地址 <http://ip:4580/JsStation/api1?a=1>,会有返回数据，按钮上方文本框会输出信息，说明浏览器真的作为服务端提供服务了。我们见证了浏览器翻身做主人了。
+ 
+我们看一下按钮下方文本框的内容。 
+```javascript
+[
+{
+    route: '/JsStation/api1', httpMethod: 'GET', apiName: 'js作为服务站点',
+    onInvoke: function (requestData_bytes, rpcData, reply_rpcData) {
+        var request_string = vit.bytesToString(requestData_bytes);
+        vit.logger.info('[api调用] request:' + request_string );
+        var replyData = {
+            success: true,
+            data:
+            {
+                request_string: request_string,
+                _: Math.random()
+            }
+        };
+        return vit.objectSerializeToBytes(replyData);
+    }
+}
+
+]
+
+```
+route代表服务地址为http://ip:4580/JsStation/api1， onInvoke回调函数指明服务被调用时所作操作，我们可以自己修改一下回调，分别点击“加载api”按钮和“启动服务”按钮，再打开地址 <http://ip:4580/JsStation/api1?a=1>,验证一下是不是这样。自己动手试试吧。
+
+
+## 2.windows
+如果是在windows环境中，可以直接下载服务中心程序然后运行。
+### 2.1下载程序文件
+从 <http://sersms.github.io/file/Sers/Sers2.1.1.250.zip> 下载程序文件。
+### 2.2运行服务中心
+解压刚下载的压缩文件，双击解压后文件夹中的文件“01 ServiceCenter.bat”即可运行服务中心
+>服务中心是用net core编写的，请先安装net core 2.1运行环境。
+
+
