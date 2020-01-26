@@ -1,43 +1,43 @@
-# ÈÃä¯ÀÀÆ÷×ö·þÎñÆ÷
-  Ò»°ã£¬ä¯ÀÀÆ÷×÷Îª¿Í»§¶Ë£¬ÏûºÄ·þÎñ¶ËÌá¹©µÄ·þÎñ¡£µ«ÌìÌì³Ô°×Ê³ÄÑÃâÏëÌåÑéÒ»ÏÂ±»ÐèÒªµÄ¸Ð¾õ.ä¯ÀÀÆ÷ÄÜÔËËã¡¢ÄÜÍ¨ÐÅ£¬ÄÇÃ´Ëü¾Í¿ÉÒÔ°Ñ×Ô¼ºµÄÔËËãÄÜÁ¦ÏòÍâÌá¹©£¬¹ýÒ»°Ñ·þÎñ¶ËµÄñ«¡£
+# è®©æµè§ˆå™¨åšæœåŠ¡å™¨
+  ä¸€èˆ¬ï¼Œæµè§ˆå™¨ä½œä¸ºå®¢æˆ·ç«¯ï¼Œæ¶ˆè€—æœåŠ¡ç«¯æä¾›çš„æœåŠ¡ã€‚ä½†å¤©å¤©åƒç™½é£Ÿéš¾å…æƒ³ä½“éªŒä¸€ä¸‹è¢«éœ€è¦çš„æ„Ÿè§‰.æµè§ˆå™¨èƒ½è¿ç®—ã€èƒ½é€šä¿¡ï¼Œé‚£ä¹ˆå®ƒå°±å¯ä»¥æŠŠè‡ªå·±çš„è¿ç®—èƒ½åŠ›å‘å¤–æä¾›ï¼Œè¿‡ä¸€æŠŠæœåŠ¡ç«¯çš„ç˜¾ã€‚
 
-½ÓÏÂÀ´ÎÒÃÇÒ»²½Ò»²½°ïä¯ÀÀÆ÷ÊµÏÖ×Ô¼ºµÄÃÎÏë¡£
+æŽ¥ä¸‹æ¥æˆ‘ä»¬ä¸€æ­¥ä¸€æ­¥å¸®æµè§ˆå™¨å®žçŽ°è‡ªå·±çš„æ¢¦æƒ³ã€‚
 
 
 ## 1.docker
-### 1.1 ²¿Êð·þÎñÖÐÐÄ
->docker²¿Êð·þÎñÖÐÐÄºÜ¼òµ¥£¬Ò»ÌõÃüÁî¼´¸ã¶¨
+### 1.1 éƒ¨ç½²æœåŠ¡ä¸­å¿ƒ
+>dockeréƒ¨ç½²æœåŠ¡ä¸­å¿ƒå¾ˆç®€å•ï¼Œä¸€æ¡å‘½ä»¤å³æžå®š
 
 ```shell
 docker run --name=sers_servicecenter --net=host -d sersms/sers_dotnet_servicecenter:2.1.1.250
 ```
 
-Èç´ËÕâ°ã£¬·þÎñÖÐÐÄ¾Í²¿ÊðºÃÁË£¬Ëû»á¿ªÆô4580¶Ë¿Ú×÷ÎªÍø¹ØÈë¿Ú£¬¿ªÆô4503¶Ë¿Ú×÷Îªwebsocket·þÎñÍ¨ÐÅ¶Ë¿Ú¡£
-¿ÉÒÔÓÃä¯ÀÀÆ÷´ò¿ªµØÖ· <http://ip:4580/_gover_/index.html?user=admin_123456> ½øÈë·þÎñÖÎÀí¿ØÖÆÌ¨£¬ÎÒÃÇÔÝÊ±ÓÃ²»µ½ÕâÀï¡£
+å¦‚æ­¤è¿™èˆ¬ï¼ŒæœåŠ¡ä¸­å¿ƒå°±éƒ¨ç½²å¥½äº†ï¼Œä»–ä¼šå¼€å¯4580ç«¯å£ä½œä¸ºç½‘å…³å…¥å£ï¼Œå¼€å¯4503ç«¯å£ä½œä¸ºwebsocketæœåŠ¡é€šä¿¡ç«¯å£ã€‚
+å¯ä»¥ç”¨æµè§ˆå™¨æ‰“å¼€åœ°å€ <http://ip:4580/_gover_/index.html?user=admin_123456> è¿›å…¥æœåŠ¡æ²»ç†æŽ§åˆ¶å°ï¼Œæˆ‘ä»¬æš‚æ—¶ç”¨ä¸åˆ°è¿™é‡Œã€‚
 
-### 1.2 JsStationµÇ³¡
->·þÎñÖÐÐÄ²¿ÊðºÃÁË£¬½ÓÏÂÀ´¸ÃÈÃä¯ÀÀÆ÷ÁÁÏàÁË¡£
+### 1.2 JsStationç™»åœº
+>æœåŠ¡ä¸­å¿ƒéƒ¨ç½²å¥½äº†ï¼ŒæŽ¥ä¸‹æ¥è¯¥è®©æµè§ˆå™¨äº®ç›¸äº†ã€‚
 
-´ò¿ªµØÖ· <http://ip:4580/JsStation/JsStation.html> ½øÈëJsStation·þÎñÕ¾µãÒ³Ãæ¡£
-·Ö±ðµã»÷¡°¼ÓÔØapi¡±°´Å¥ºÍ¡°Æô¶¯·þÎñ¡±°´Å¥£¬Èô°´Å¥ÉÏ·½ÎÄ±¾¿òÓÐÈçÏÂ×ÖÑùÔò´ú±íÒÑ¾­×÷Îª·þÎñÕ¾µãÌá¹©·þÎñÁË¡£
+æ‰“å¼€åœ°å€ <http://ip:4580/JsStation/JsStation.html> è¿›å…¥JsStationæœåŠ¡ç«™ç‚¹é¡µé¢ã€‚
+åˆ†åˆ«ç‚¹å‡»â€œåŠ è½½apiâ€æŒ‰é’®å’Œâ€œå¯åŠ¨æœåŠ¡â€æŒ‰é’®ï¼Œè‹¥æŒ‰é’®ä¸Šæ–¹æ–‡æœ¬æ¡†æœ‰å¦‚ä¸‹å­—æ ·åˆ™ä»£è¡¨å·²ç»ä½œä¸ºæœåŠ¡ç«™ç‚¹æä¾›æœåŠ¡äº†ã€‚
 
 ```javascript
-[17:16.482][info]¼ÓÔØapi...
-[17:16.485][info]apiÒÑ¼ÓÔØ£¬ÊýÁ¿£º1
+[17:16.482][info]åŠ è½½api...
+[17:16.485][info]apiå·²åŠ è½½ï¼Œæ•°é‡ï¼š1
 [17:17.821][info][sers.CL]try connect...
 [17:17.957][info][ServiceStation] regist serviceStation to ServiceCenter...
 [17:17.980][info][ServiceStation] regist - succeed
 ```
- ÎÒÃÇÀ´ÑéÖ¤Ò»ÏÂä¯ÀÀÆ÷ÊÇ·ñÕæµÄÌá¹©ÁË·þÎñ£¬ä¯ÀÀÆ÷ÐÂ½¨´°¿Ú£¬´ò¿ªµØÖ· <http://ip:4580/JsStation/api1?a=1>,»áÓÐ·µ»ØÊý¾Ý£¬°´Å¥ÉÏ·½ÎÄ±¾¿ò»áÊä³öÐÅÏ¢£¬ËµÃ÷ä¯ÀÀÆ÷ÕæµÄ×÷Îª·þÎñ¶ËÌá¹©·þÎñÁË¡£ÎÒÃÇ¼ûÖ¤ÁËä¯ÀÀÆ÷·­Éí×öÖ÷ÈËÁË¡£
+ æˆ‘ä»¬æ¥éªŒè¯ä¸€ä¸‹æµè§ˆå™¨æ˜¯å¦çœŸçš„æä¾›äº†æœåŠ¡ï¼Œæµè§ˆå™¨æ–°å»ºçª—å£ï¼Œæ‰“å¼€åœ°å€ <http://ip:4580/JsStation/api1?a=1>,ä¼šæœ‰è¿”å›žæ•°æ®ï¼ŒæŒ‰é’®ä¸Šæ–¹æ–‡æœ¬æ¡†ä¼šè¾“å‡ºä¿¡æ¯ï¼Œè¯´æ˜Žæµè§ˆå™¨çœŸçš„ä½œä¸ºæœåŠ¡ç«¯æä¾›æœåŠ¡äº†ã€‚æˆ‘ä»¬è§è¯äº†æµè§ˆå™¨ç¿»èº«åšä¸»äººäº†ã€‚
  
-ÎÒÃÇ¿´Ò»ÏÂ°´Å¥ÏÂ·½ÎÄ±¾¿òµÄÄÚÈÝ¡£ 
+æˆ‘ä»¬çœ‹ä¸€ä¸‹æŒ‰é’®ä¸‹æ–¹æ–‡æœ¬æ¡†çš„å†…å®¹ã€‚ 
 ```javascript
 [
 {
-    route: '/JsStation/api1', httpMethod: 'GET', apiName: 'js×÷Îª·þÎñÕ¾µã',
+    route: '/JsStation/api1', httpMethod: 'GET', apiName: 'jsä½œä¸ºæœåŠ¡ç«™ç‚¹',
     onInvoke: function (requestData_bytes, rpcData, reply_rpcData) {
         var request_string = vit.bytesToString(requestData_bytes);
-        vit.logger.info('[apiµ÷ÓÃ] request:' + request_string );
+        vit.logger.info('[apiè°ƒç”¨] request:' + request_string );
         var replyData = {
             success: true,
             data:
@@ -53,15 +53,15 @@ docker run --name=sers_servicecenter --net=host -d sersms/sers_dotnet_servicecen
 ]
 
 ```
-route´ú±í·þÎñµØÖ·Îªhttp://ip:4580/JsStation/api1£¬ onInvoke»Øµ÷º¯ÊýÖ¸Ã÷·þÎñ±»µ÷ÓÃÊ±Ëù×÷²Ù×÷£¬ÎÒÃÇ¿ÉÒÔ×Ô¼ºÐÞ¸ÄÒ»ÏÂ»Øµ÷£¬·Ö±ðµã»÷¡°¼ÓÔØapi¡±°´Å¥ºÍ¡°Æô¶¯·þÎñ¡±°´Å¥£¬ÔÙ´ò¿ªµØÖ· <http://ip:4580/JsStation/api1?a=1>,ÑéÖ¤Ò»ÏÂÊÇ²»ÊÇÕâÑù¡£×Ô¼º¶¯ÊÖÊÔÊÔ°É¡£
+routeä»£è¡¨æœåŠ¡åœ°å€ä¸ºhttp://ip:4580/JsStation/api1ï¼Œ onInvokeå›žè°ƒå‡½æ•°æŒ‡æ˜ŽæœåŠ¡è¢«è°ƒç”¨æ—¶æ‰€ä½œæ“ä½œï¼Œæˆ‘ä»¬å¯ä»¥è‡ªå·±ä¿®æ”¹ä¸€ä¸‹å›žè°ƒï¼Œåˆ†åˆ«ç‚¹å‡»â€œåŠ è½½apiâ€æŒ‰é’®å’Œâ€œå¯åŠ¨æœåŠ¡â€æŒ‰é’®ï¼Œå†æ‰“å¼€åœ°å€ <http://ip:4580/JsStation/api1?a=1>,éªŒè¯ä¸€ä¸‹æ˜¯ä¸æ˜¯è¿™æ ·ã€‚è‡ªå·±åŠ¨æ‰‹è¯•è¯•å§ã€‚
 
 
 ## 2.windows
-Èç¹ûÊÇÔÚwindows»·¾³ÖÐ£¬¿ÉÒÔÖ±½ÓÏÂÔØ·þÎñÖÐÐÄ³ÌÐòÈ»ºóÔËÐÐ¡£
-### 2.1ÏÂÔØ³ÌÐòÎÄ¼þ
-´Ó <http://sersms.github.io/file/Sers/Sers2.1.1.250.zip> ÏÂÔØ³ÌÐòÎÄ¼þ¡£
-### 2.2ÔËÐÐ·þÎñÖÐÐÄ
-½âÑ¹¸ÕÏÂÔØµÄÑ¹ËõÎÄ¼þ£¬Ë«»÷½âÑ¹ºóÎÄ¼þ¼ÐÖÐµÄÎÄ¼þ¡°01 ServiceCenter.bat¡±¼´¿ÉÔËÐÐ·þÎñÖÐÐÄ
->·þÎñÖÐÐÄÊÇÓÃnet core±àÐ´µÄ£¬ÇëÏÈ°²×°net core 2.1ÔËÐÐ»·¾³¡£
+å¦‚æžœæ˜¯åœ¨windowsçŽ¯å¢ƒä¸­ï¼Œå¯ä»¥ç›´æŽ¥ä¸‹è½½æœåŠ¡ä¸­å¿ƒç¨‹åºç„¶åŽè¿è¡Œã€‚
+### 2.1ä¸‹è½½ç¨‹åºæ–‡ä»¶
+ä»Ž <http://sersms.github.io/file/Sers/Sers2.1.1.250.zip> ä¸‹è½½ç¨‹åºæ–‡ä»¶ã€‚
+### 2.2è¿è¡ŒæœåŠ¡ä¸­å¿ƒ
+è§£åŽ‹åˆšä¸‹è½½çš„åŽ‹ç¼©æ–‡ä»¶ï¼ŒåŒå‡»è§£åŽ‹åŽæ–‡ä»¶å¤¹ä¸­çš„æ–‡ä»¶â€œ01 ServiceCenter.batâ€å³å¯è¿è¡ŒæœåŠ¡ä¸­å¿ƒ
+>æœåŠ¡ä¸­å¿ƒæ˜¯ç”¨net coreç¼–å†™çš„ï¼Œè¯·å…ˆå®‰è£…net core 2.1è¿è¡ŒçŽ¯å¢ƒã€‚
 
 
