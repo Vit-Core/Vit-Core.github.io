@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>Sers微服务</title>
+
+    <link rel="stylesheet" href="Scripts/editormd/css/editormd.css" />
+    <script src="Scripts/editormd/examples/js/jquery.min.js"></script>
+    <script src="Scripts/editormd/lib/marked.min.js"></script>
+    <script src="Scripts/editormd/lib/prettify.min.js"></script>
+    <script src="Scripts/editormd/lib/raphael.min.js"></script>
+    <script src="Scripts/editormd/lib/underscore.min.js"></script>
+    <script src="Scripts/editormd/lib/sequence-diagram.min.js"></script>
+    <script src="Scripts/editormd/lib/flowchart.min.js"></script>
+    <script src="Scripts/editormd/lib/jquery.flowchart.min.js"></script>
+    <script src="Scripts/editormd/editormd.js"></script>
+
+    <script src="Scripts/jquery/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="editormd-view" style="max-width:1024px;margin:auto;">
+    </div>
+
+    <script type="text/javascript">
+
+        var mdUrl = location.search.slice(1)||'md/readme.md';
+
+        $.ajax({
+            type: 'GET',           
+            url: mdUrl,
+            success: function (md) {             
+                if (md) {
+                    var md = "[TOC]\n\n" + md
+
+                    editormd.markdownToHTML("editormd-view", {
+                        markdown: md,
+                        htmlDecode: true
+                    });
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>
