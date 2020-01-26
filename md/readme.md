@@ -1,15 +1,15 @@
-﻿# 1解析Sers微服务
+# 1解析Sers微服务
  
-[1介绍](/?md/SersIntroduce/1Introduce.md)
+[1介绍](/?md/解析Sers微服务/1介绍.md)
 
-[2站点划分](/?md/SersIntroduce/2StationPartition.md)
+[2站点划分](/?md/解析Sers微服务/2站点划分.md)
 
 
-[3开箱即用](/?md/SersIntroduce/3OutOfTheBox.md)
+[3开箱即用](/?md/解析Sers微服务/3开箱即用.md)
 
-[3.1让浏览器做服务器](/?md/SersIntroduce/3.1BrowserAsServer.md)
+[3.1让浏览器做服务端](/?md/解析Sers微服务/3.1让浏览器做服务端.md)
 
-[3.2用NetCore提供微服务](/?md/SersIntroduce/3.2UseNetCore.md)
+[3.2接入NetCore](/?md/解析Sers微服务/3.2接入NetCore.md)
 
 
 
