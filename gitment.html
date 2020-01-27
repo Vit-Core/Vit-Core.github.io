@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>Sers微服务</title>
+
+    <link rel="stylesheet" href="Scripts/editormd/css/editormd.css" />
+    <script src="Scripts/editormd/examples/js/jquery.min.js"></script>
+    <script src="Scripts/editormd/lib/marked.min.js"></script>
+    <script src="Scripts/editormd/lib/prettify.min.js"></script>
+    <script src="Scripts/editormd/lib/raphael.min.js"></script>
+    <script src="Scripts/editormd/lib/underscore.min.js"></script>
+    <script src="Scripts/editormd/lib/sequence-diagram.min.js"></script>
+    <script src="Scripts/editormd/lib/flowchart.min.js"></script>
+    <script src="Scripts/editormd/lib/jquery.flowchart.min.js"></script>
+    <script src="Scripts/editormd/editormd.js"></script>
+
+    <script src="Scripts/jquery/jquery.min.js"></script>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</head>
+<body>
+
+    <div id="editormd-view" style="max-width:1024px;margin:auto;">
+    </div>
+
+    <script type="text/javascript">
+
+        var mdUrl = location.search.slice(1) || 'md/readme.md';
+
+        $.ajax({
+            type: 'GET',
+            url: mdUrl,
+            success: function (md) {
+                if (md) {
+                    var md = "[TOC]\n\n" + md
+
+                    editormd.markdownToHTML("editormd-view", {
+                        markdown: md,
+                        htmlDecode: true
+                    });
+                }
+            }
+        });
+
+    </script>
+    <div style="max-width:1024px;margin:auto;font-size:14px;color:gray;text-align:right;">
+        <a href="/">首页</a>
+        <span id="busuanzi_container">
+            总访问量 <span id="busuanzi_value_site_pv"></span>
+            -访客数 <span id="busuanzi_value_site_uv"></span>
+            <!--本文总阅读量<span id="busuanzi_value_page_pv"></span>-->
+        </span>
+    </div>
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            id: decodeURI(location.search.slice(1) || 'md/readme.md'), // 可选。默认为 location.href
+            owner: 'sersms',
+            repo: 'sersms.github.io',
+            oauth: {
+                client_id: '489f377439a7edd98ef1',
+                client_secret: 'd70e87f186d8d9877430f97d89275686c9d2e47c',
+            },
+        })
+        gitment.render('container')
+    </script>
+
+
+</body>
+</html>
