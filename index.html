@@ -55,7 +55,8 @@
             repo: 'sersms.github.io',
             owner: 'sersms',
             admin: ['sersms'],
-            id: decodeURI(window.location.pathname),
+            //id: decodeURI(location.href).substr(location.origin.length),
+            id: location.search.slice(1) || 'md/readme.md',
             distractionFreeMode: true
         });
         gitalk.render('gitalk-container');
