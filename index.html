@@ -56,7 +56,7 @@
             owner: 'sersms',
             admin: ['sersms'],
             //id: decodeURI(location.href).substr(location.origin.length),
-            id: location.search.slice(1) || 'md/readme.md',
+            id: decodeURI( location.search.slice(1) || 'md/readme.md') ,
             distractionFreeMode: true
         });
         gitalk.render('gitalk-container');
