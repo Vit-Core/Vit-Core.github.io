@@ -17,8 +17,11 @@
 
     <script src="Scripts/jquery/jquery.min.js"></script>
 
+    <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
 </head>
 <body>
+
     <div id="editormd-view" style="max-width:1024px;margin:auto;">
     </div>
 
@@ -42,6 +45,13 @@
         });
 
     </script>
+    <div style="max-width:1024px;margin:auto;">
+        <span id="busuanzi_container">
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            本站访客数<span id="busuanzi_value_site_uv"></span>人次
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+    </div>
     <!-- Link Gitalk 的支持文件  -->
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
@@ -56,12 +66,14 @@
             owner: 'sersms',
             admin: ['sersms'],
             //id: decodeURI(location.href).substr(location.origin.length),
-            id: decodeURI( location.search.slice(1) || 'md/readme.md') ,
+            id: decodeURI(location.search.slice(1) || 'md/readme.md'),
             distractionFreeMode: true
         });
         gitalk.render('gitalk-container');
+
+        console.log('doc: ' + decodeURI(location.search.slice(1) || 'md/readme.md'));
     </script>
     <!-- Gitalk end -->
-    
+
 </body>
 </html>
