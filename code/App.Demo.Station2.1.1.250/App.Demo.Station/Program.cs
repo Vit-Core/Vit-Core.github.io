@@ -20,13 +20,9 @@ namespace App.Demo.Station
 
 
             #region (x.2)加载api
-            //(x.x.1)加载api
             //ServiceStation.Instance.LoadSsApi(typeof(Program).Assembly);
             ServiceStation.Instance.LoadSsApi(typeof(Program).Assembly, new Sers.Core.Module.ApiLoader.ApiLoaderConfig { apiStationName = "demo" });
             ServiceStation.Instance.LoadApi();
-
-            //(x.x.2)加载在线升级api（从appsettings.json中读取配置。如不需要在线升级，可以不加载，在线升级地址为 /demo/onlineupgrade/index.html ）
-            ServiceStation.Instance.localApiService.LoadApi_OnlineUpgrade();
             #endregion
 
     
