@@ -28,13 +28,13 @@
 ## 1.备份还原配置
 在“SqlServer备份还原配置”页面配置数据库的连接字符串、备份文件路径、数据库路径。如下所示：
 
-![img](http://localhost:4588/Sqler/file/SqlServerBackup-1.png)
+![img](file/SqlServerBackup-1.png)
 
 ## 2.备份还原
    在“SqlServer备份还原”页面，可以进行数据库的备份还原相关操作。列表显示的是备份文件列表。
    表头显示数据库状态（online:在线  offline：离线  none:没有数据库  unknow：未知状态）和进程连接数。如下所示：
 
-![img](http://localhost:4588/Sqler/file/SqlServerBackup-2.png)
+![img](file/SqlServerBackup-2.png)
 
 
 SqlServer有两种备份数据库的方式：bak备份和Sqler备份。
@@ -72,7 +72,7 @@ Sqler备份使用本软件的备份逻辑进行备份，逻辑为：
 ### 导入导出
 点击导入导出按钮，会弹出导入导出弹框，在弹框内进行数据库的导入导出操作。如下所示：
 
-![img](http://localhost:4588/Sqler/file/SqlServerBackup-3.png)
+![img](file/SqlServerBackup-3.png)
 
 
 
