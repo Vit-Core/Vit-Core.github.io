@@ -26,7 +26,7 @@
 
     <script type="text/javascript">
 
-        var mdUrl = location.search.slice(1) || 'md/readme.md';
+        var mdUrl = location.search.slice(1) || 'doc/md/readme.md';
 
         $.ajax({
             type: 'GET',
@@ -57,7 +57,7 @@
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
     <script>
         var gitment = new Gitment({
-            id: decodeURI(location.search.slice(1) || 'md/readme.md'), // 可选。默认为 location.href
+            id: decodeURI(mdUrl), // 可选。默认为 location.href
             owner: 'sersms',
             repo: 'sersms.github.io',
             oauth: {

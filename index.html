@@ -35,7 +35,7 @@
 
     <script type="text/javascript">
 
-        var mdUrl = location.search.slice(1) || 'md/readme.md';
+        var mdUrl = location.search.slice(1) || 'doc/md/readme.md';
 
         $.ajax({
             type: 'GET',
@@ -71,16 +71,14 @@
             // gitalk的主要参数
             clientID: '489f377439a7edd98ef1',
             clientSecret: 'd70e87f186d8d9877430f97d89275686c9d2e47c',
-            repo: 'sersms.github.io',
-            owner: 'sersms',
-            admin: ['sersms'],
+            repo: 'serset.github.io',
+            owner: 'serset',
+            admin: ['serset'],
             //id: decodeURI(location.href).substr(location.origin.length),
-            id: decodeURI(location.search.slice(1) || 'md/readme.md'),
+            id: decodeURI(mdUrl),
             distractionFreeMode: true
         });
         gitalk.render('gitalk-container');
-
-            //console.log('doc: ' + decodeURI(location.search.slice(1) || 'md/readme.md'));
     </script>
     <!-- Gitalk end -->
 
