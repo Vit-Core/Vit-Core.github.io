@@ -1,88 +1,257 @@
-﻿<!DOCTYPE html>
-<html lang="zh">
+﻿<!doctype html>
+<html lang="zh-cn">
 <head>
-    <meta charset="utf-8" />
-    <title>Sers微服务</title>
+    <title>Sers</title>
 
-    <link rel="stylesheet" href="Scripts/editormd/css/editormd.css" />
-    <script src="Scripts/editormd/examples/js/jquery.min.js"></script>
-    <script src="Scripts/editormd/lib/marked.min.js"></script>
-    <script src="Scripts/editormd/lib/prettify.min.js"></script>
-    <script src="Scripts/editormd/lib/raphael.min.js"></script>
-    <script src="Scripts/editormd/lib/underscore.min.js"></script>
-    <script src="Scripts/editormd/lib/sequence-diagram.min.js"></script>
-    <script src="Scripts/editormd/lib/flowchart.min.js"></script>
-    <script src="Scripts/editormd/lib/jquery.flowchart.min.js"></script>
-    <script src="Scripts/editormd/editormd.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <script src="Scripts/jquery/jquery.min.js"></script>
 
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="Scripts/blog/css/style.css">
 
-
-    <style type="text/css">
-        .markdown-body {
-            font-family: " Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif !important;
-        }
-    </style>
-
-
+    <!-- Font Awesome -->
+    <link href="Scripts/blog/css/font-awesome.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-    <div id="editormd-view" style="max-width:1024px;margin:auto;">
+    <!-- Header -->
+    <div class="container">
+        <div class="header-wrap d-none d-md-block">
+            <div class="row">
+
+                <!-- Left header box -->
+                <header class="col-6 text-left">
+                    <h1><span> Sers </span> 微服务协议 </h1>
+                </header>
+
+                <!-- Right header box -->
+                <div class="col-6 text-right">
+                    <p class="header-social-icons social-icons">
+                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script type="text/javascript">
 
-        var mdUrl = location.search.slice(1) || 'doc/README.md';
+    <!-- Main navigation -->
+    <div class="container navbar-container">
+        <nav class="navbar navbar-expand-md navbar-light">
 
-        $.ajax({
-            type: 'GET',
-            url: mdUrl,
-            success: function (md) {
-                if (md) {
-                    var md = "[TOC]\n\n" + md
+            <!-- Company name shown on mobile -->
+            <a class="navbar-brand d-md-none d-lg-none d-xl-none" href="#"><span> Sers </span> 微服务协议 </a>
 
-                    editormd.markdownToHTML("editormd-view", {
-                        markdown: md,
-                        htmlDecode: true
-                    });
-                }
-            }
-        });
+            <!-- Mobile menu toggle -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    </script>
-    <div style="max-width:1024px;margin:auto;font-size:14px;color:gray;text-align:right;">
-        <a href="/">首页</a>
-        <span id="busuanzi_container">
-            总访问量 <span id="busuanzi_value_site_pv"></span>
-            -访客数 <span id="busuanzi_value_site_uv"></span>
-            <!--本文总阅读量<span id="busuanzi_value_page_pv"></span>-->
-        </span>
+            <!-- Main navigation items -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">k8s</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">net core</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline header-search-form my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" size="10" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
     </div>
-    <!-- Link Gitalk 的支持文件  -->
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-    <div id="gitalk-container"></div>
-    <script type="text/javascript">
-        var gitalk = new Gitalk({
 
-            // gitalk的主要参数
-            clientID: '7bc1aab1caf765aecaac',
-            clientSecret: 'a3c1821a520cce445c653b21de59deac9dda4620',
-            repo: 'serset.github.io',
-            owner: 'serset',
-            admin: ['serset'],
-            //id: decodeURI(location.href).substr(location.origin.length),
-            id: decodeURI(mdUrl),
-            distractionFreeMode: true
-        });
-        gitalk.render('gitalk-container');
-    </script>
-    <!-- Gitalk end -->
+    <!-- Jumbtron / Slider -->
+    <div class="jumbotron-wrap">
+        <div class="container">
+            <div class="jumbotron static-slider">
+                <h1 class="text-center">Reserved Area</h1>
+                <p class="lead text-center">I should say something here, but I don't know what to say</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content area -->
+    <main class="container">
+        <div class="row">
+
+            <!-- Main content -->
+            <div class="col">
+                <!--内容区-->
+                <article>
+                    <!-- 内容区 begin -->
+                    <link rel="stylesheet" href="Scripts/editormd/css/editormd.css" />
+                    <!--<script src="Scripts/editormd/examples/js/jquery.min.js"></script>-->
+                    <script src="Scripts/editormd/lib/marked.min.js"></script>
+                    <script src="Scripts/editormd/lib/prettify.min.js"></script>
+                    <script src="Scripts/editormd/lib/raphael.min.js"></script>
+                    <script src="Scripts/editormd/lib/underscore.min.js"></script>
+                    <script src="Scripts/editormd/lib/sequence-diagram.min.js"></script>
+                    <script src="Scripts/editormd/lib/flowchart.min.js"></script>
+                    <script src="Scripts/editormd/lib/jquery.flowchart.min.js"></script>
+                    <script src="Scripts/editormd/editormd.js"></script>
+                    <style type="text/css">
+                        .markdown-body {
+                            font-family: "Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif !important;
+                        }
+                    </style>
+
+                    <div id="editormd-view" style="max-width:1024px;margin:auto;">
+                    </div>
+
+                    <script type="text/javascript">
+
+                        var mdUrl = location.search.slice(1) || 'doc/README.md';
+                        //mdUrl = 'https://serset.github.io/doc/md/Sers微服务快速入门/02.快速接入.md'
+                        $.ajax({
+                            type: 'GET',
+                            url: mdUrl,
+                            success: function (md) {
+                                if (md) {
+                                    var md = "[TOC]\n\n" + md;
+
+                                    editormd.markdownToHTML("editormd-view", {
+                                        markdown: md,
+                                        htmlDecode: true
+                                    });
+                                }
+                            }
+                        });
+
+                    </script>
+                    <!-- 内容区 end -->
+
+                </article>
+                <!--评论区-->
+                <article>
+
+                    <!-- 访问统计 begin -->
+                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <div style="max-width:1024px;margin:auto;font-size:14px;color:gray;text-align:right;">
+                        <a href="/">首页</a>
+                        <span id="busuanzi_container">
+                            总访问量 <span id="busuanzi_value_site_pv"></span>
+                            -访客数 <span id="busuanzi_value_site_uv"></span>
+                            <!--本文总阅读量<span id="busuanzi_value_page_pv"></span>-->
+                        </span>
+                    </div>
+                    <!-- 访问统计 end -->
+                    <!-- 评论区 begin -->
+                    <!-- Link Gitalk 的支持文件  -->
+                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                    <div id="gitalk-container"></div>
+                    <script type="text/javascript">
+                        var gitalk = new Gitalk({
+
+                            // gitalk的主要参数
+                            clientID: '7bc1aab1caf765aecaac',
+                            clientSecret: 'a3c1821a520cce445c653b21de59deac9dda4620',
+                            repo: 'serset.github.io',
+                            owner: 'serset',
+                            admin: ['serset'],
+                            //id: decodeURI(location.href).substr(location.origin.length),
+                            id: decodeURI(mdUrl),
+                            distractionFreeMode: true
+                        });
+                        gitalk.render('gitalk-container');
+                    </script>
+                    <!-- Gitalk end -->
+                    <!-- 评论区 end -->
+
+                </article>
 
 
-    
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <div class="container footer-container">
+        <footer class="footer">
+            <div class="footer-lists">
+                <div class="row">
+                    <div class="col-sm">
+                        <ul>
+                            <li><h4>Proin accumsan</h4></li>
+                            <li><a href="#">Rutrum nulla a ultrices</a></li>
+                            <li><a href="#">Blandit elementum</a></li>
+                            <li><a href="#">Proin placerat accumsan</a></li>
+                            <li><a href="#">Morbi hendrerit libero </a></li>
+                            <li><a href="#">Curabitur sit amet tellus</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <ul>
+                            <li><h4>Condimentum</h4></li>
+                            <li><a href="#">Curabitur sit amet tellus</a></li>
+                            <li><a href="#">Morbi hendrerit libero </a></li>
+                            <li><a href="#">Proin placerat accumsan</a></li>
+                            <li><a href="#">Rutrum nulla a ultrices</a></li>
+                            <li><a href="#">Cras dictum</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <ul>
+                            <li><h4>Suspendisse</h4></li>
+                            <li><a href="#">Morbi hendrerit libero </a></li>
+                            <li><a href="#">Proin placerat accumsan</a></li>
+                            <li><a href="#">Rutrum nulla a ultrices</a></li>
+                            <li><a href="#">Curabitur sit amet tellus</a></li>
+                            <li><a href="#">Donec in ligula nisl.</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm">
+                        <h4>Suspendisse</h4>
+                        <p>Integer mattis blandit turpis, quis rutrum est. Maecenas quis arcu vel felis lobortis iaculis fringilla at ligula. Nunc dignissim porttitor dolor eget porta.</p>
+
+                        <p class="social-icons">
+                            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+                            <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="text-center">Copyright &copy; 2021.Company name All rights reserved.</p>
+                <p class="text-center"><a href="#">Back to top</a></p>
+            </div>
+
+        </footer>
+    </div>
+
+
+    <!-- Bootcamp JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="Scripts/blog/js/jquery-3.2.1.slim.min.js"></script>-->
+    <script src="Scripts/blog/js/popper.min.js"></script>
+    <script src="Scripts/blog/js/bootstrap.min.js"></script>
+
 </body>
 </html>

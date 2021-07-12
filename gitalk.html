@@ -8,7 +8,6 @@
 
 </head>
 <body>
-
     <!-- 内容区 begin -->
     <link rel="stylesheet" href="Scripts/editormd/css/editormd.css" />
     <!--<script src="Scripts/editormd/examples/js/jquery.min.js"></script>-->
@@ -20,10 +19,17 @@
     <script src="Scripts/editormd/lib/flowchart.min.js"></script>
     <script src="Scripts/editormd/lib/jquery.flowchart.min.js"></script>
     <script src="Scripts/editormd/editormd.js"></script>
+    <style type="text/css">
+        .markdown-body {
+            font-family: "Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif !important;
+        }
+    </style>
 
-    <div id="editormd-view" style="max-width:1024px;margin:auto;"></div>
+    <div id="editormd-view" style="max-width:1024px;margin:auto;">
+    </div>
 
     <script type="text/javascript">
+
         var mdUrl = location.search.slice(1) || 'doc/README.md';
         //mdUrl = 'https://serset.github.io/doc/md/Sers微服务快速入门/02.快速接入.md'
         $.ajax({
@@ -47,7 +53,7 @@
 
 
 
-    <!-- 访问统计 begin -->
+    <!-- 访问统计 begin -->    
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <div style="max-width:1024px;margin:auto;font-size:14px;color:gray;text-align:right;">
         <a href="/">首页</a>
@@ -60,24 +66,27 @@
     <!-- 访问统计 end -->
 
 
-
     <!-- 评论区 begin -->
-    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <!-- Link Gitalk 的支持文件  -->
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
 
-    <div id="container"></div>
-    <script>
-        var gitment = new Gitment({
-            id: decodeURI(mdUrl), // 可选。默认为 location.href
-            owner: 'serset',
+            // gitalk的主要参数
+            clientID: '7bc1aab1caf765aecaac',
+            clientSecret: 'a3c1821a520cce445c653b21de59deac9dda4620',
             repo: 'serset.github.io',
-            oauth: {
-                client_id: '7bc1aab1caf765aecaac',
-                client_secret: 'a3c1821a520cce445c653b21de59deac9dda4620',
-            },
-        })
-        gitment.render('container')
+            owner: 'serset',
+            admin: ['serset'],
+            //id: decodeURI(location.href).substr(location.origin.length),
+            id: decodeURI(mdUrl),
+            distractionFreeMode: true
+        });
+        gitalk.render('gitalk-container');
     </script>
+    <!-- Gitalk end -->
     <!-- 评论区 end -->
 
 </body>
